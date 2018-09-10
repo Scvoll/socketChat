@@ -1,0 +1,136 @@
+@import "resetCSS",'chat','mixins';
+
+
+
+
+body {
+    width: 100%;
+    background-color: #7bbaff;
+}
+
+.fullLoginForm {
+    width: 50%;
+    margin: 0 auto;
+    text-align: center;
+    .logFormTop {
+        height: 350px;
+        background-color: #00a0ff;
+        padding-top: 20px;
+    }
+    h1 {
+        color: #ffffff;
+        font-family: Arial, cursive;
+        font-size: 4em;
+    }
+
+    .icon {
+        margin: 30px auto;
+        width: 100px;
+        height: 100px;
+        background-color: #ffbdb8 ;
+        @include border-radius(10px);
+        border-bottom-left-radius: 0;
+        -moz-border-radius-bottomleft: 0;
+        .lineIconOne {
+            position: relative;
+            height: 8px;
+            width: 55%;
+            background-color: #000000;
+            top: 30px;
+            left: 20px;
+        }
+        .lineIconTwo {
+            position: relative;
+            height: 8px;
+            width: 33%;
+            background-color: #000000;
+            top: 40px;
+            left: 20px;
+        }
+        .iconTriangle {
+            position: relative;
+            width: 0;
+            height: 0;
+            border: {
+                top: 15px solid #be8b86;
+                right: 15px solid #be8e8b;
+                bottom: 15px solid transparent;
+                left: 15px solid transparent;
+
+            }
+            bottom: -84px;
+        }
+    }
+
+    form {
+        position: relative;
+        height: 200px;
+        width: 80%;
+        background-color: #ffffff;
+        text-align: left;
+        margin: 70px auto;
+        padding: 50px 0 0 20px;
+        @include border-radius(10px);
+        span {
+            display: block;
+            color: #000000;
+            font-size: 1.5em;
+            margin-bottom: 20px;
+        }
+        input {
+            margin-bottom: 5px;
+            outline: none;
+            border: none;
+            font-size: 1.1em;
+
+        }
+
+        .line {
+            height: 1px;
+            width: 96%;
+            background-color: #8d8d8d;
+        }
+
+        button {
+            @include border-radius(20px);
+            font-size: 1.5em;
+            box-shadow: none;
+            outline: none;
+            border: 2px solid #00a0ff;
+            margin-top: 35px;
+            float: left;
+            &:hover {
+                background-color: #00a0ff;
+            }
+        }
+        h2 {
+            position: relative;
+            max-width: 80%;
+            font-size: 1.2em;
+            left: 20px;
+        }
+
+    }
+
+    .logFormBottom {
+        height: 230px;
+        background-color: #000000;
+    }
+}
+
+@media (max-width: 800px) {
+    .fullLoginForm {
+        width: 100%;
+        .logFormBottom {
+
+        }
+    }
+}
+
+@media (max-width: 333px) {
+    .fullLoginForm {
+        h1 {
+            font-size: 3em;
+        }
+    }
+}

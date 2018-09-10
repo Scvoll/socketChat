@@ -1,0 +1,168 @@
+@import 'mixins';
+
+.chatWindow {
+    width: 50%;
+    max-width: 1200px;
+    background-color: #00a0ff;
+    min-height: 600px;
+    margin: 0 auto;
+    .online {
+        position: relative;
+        z-index: 2;
+        background-color: #56abff;
+        text-align: center;
+        padding: 5px 10px;
+        font-family: Arial, cursive;
+        float: left;
+        min-height: 590px;
+        width: 150px;
+        border-right: 1px solid #377dd5;
+        span {
+            font-size: 1.5em;
+        }
+        ul {
+            overflow: auto;
+            text-align: left;
+            border-top: 1px solid #8d8d8d;
+            padding-top: 5px;
+            li {
+                margin-bottom: 3px;
+            }
+        }
+
+
+    }
+    .messageWindow {
+        .messages {
+            height: 540px;
+            padding:0 7%;
+            overflow: auto;
+            div {
+                position: relative;
+                max-width: 220px;
+                background-color: white;
+                @include border-radius(5px);
+                margin-top: 10px;
+                padding: 10px;
+                .nick {
+                    position: relative;
+                    font-family: 'URW Chancery L', cursive;
+                    font-size: 0.96em;
+                    bottom: 5px;
+                }
+                .text {
+                }
+                .date {
+                    position: absolute;
+                    font-size: 0.60em;
+                    left:55%;
+                    top: 8px;
+                }
+
+            }
+            .emptySpace {
+                height: 30px;
+                background-color: #00a0ff;
+            }
+            .selfMessage {
+                margin-left: 40%;
+                .date {
+                    left: 55%;
+
+                }
+            }
+        }
+
+        form {
+            background-color: black;
+            position: relative;
+            height: 60px;
+            input {
+                border: none;
+                height: 90%;
+                width: 50%;
+                background-color: black;
+                color: #ffffff;
+                margin-left: 10px;
+                outline: none;
+            }
+            button {
+                height: 60px;
+                width: 60px;
+                position: absolute;
+                background-color: #ffbdb8;
+                font-family: Luminari, fantasy;
+                font-size:1.1em;
+                border: none;
+                right: 30px;
+                bottom: 30px;
+                outline: none;
+                @include border-radius(50%);
+                &:hover {
+                    background-color: #c5928d;
+                }
+            }
+        }
+    }
+}
+
+
+
+@media (max-width: 1139px) {
+    .chatWindow {
+        width: 65%;
+        .messageWindow {
+            .messages {
+                .selfMessage {
+                    .date {
+                        left: 52%;
+                    }
+                }
+            }
+        }
+    }
+}
+
+@media (max-width: 850px) {
+    .chatWindow {
+        width: 80%;
+    }
+}
+
+@media (max-width: 700px) {
+    .chatWindow {
+        width: 100%;
+        .messageWindow {
+            .messages {
+                .selfMessage {
+                    .date {
+                        left: 50%;
+                    }
+                }
+            }
+        }
+
+    }
+}
+@media (max-width: 550px) {
+    .chatWindow {
+        width: 100%;
+        .online {
+            display: none;
+        }
+    }
+}
+
+@media (max-width: 400px) {
+    .chatWindow {
+        .messageWindow {
+            .messages {
+                .selfMessage {
+                    .date {
+                        left: 40%;
+                    }
+                }
+            }
+        }
+    }
+}
